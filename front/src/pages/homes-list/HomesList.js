@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "./HomesList.scss";
 import { getHomes } from "../../services/utils";
+import { Card } from "../../components/card/Card"
 
 export const HomesList = () => {
   const [homes, setHomes] = useState([]);
@@ -14,7 +15,9 @@ export const HomesList = () => {
       <h1>
         Mis espacios
       </h1>
-      {homes && homes.map((home)=> <p>{home.name}</p>)}
+      <div className="row">
+      {homes && homes.map((home)=> <Card name={home.name} address={home.address} type={home.type} id={home.id}></Card>)}
+      </div>
     </div>
   );
 };
