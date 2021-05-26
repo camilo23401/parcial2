@@ -4,7 +4,8 @@ import { getHomeById } from "../../services/utils";
 import { useParams } from 'react-router-dom';
 import { Card } from "../../components/card/RoomCard"
 import { Devices } from "../../components/devices/Devices";
-import { PieChart }  from "../../components/piechart/PieChart"
+import { PieChart }  from "../../components/piechart/PieChart";
+import { FormattedMessage } from "react-intl";
 
 
 export const RoomsList = () => {
@@ -23,7 +24,7 @@ export const RoomsList = () => {
   return (
     <div className="container home">
       <h1>
-        Mis habitaciones
+      <FormattedMessage id="myRooms"/>
       </h1>
       <div className="row">
       {rooms && rooms.map((room)=><p onClick={() => setSelectedRoomDevices(room.devices)}><Card name={room.name} homeId={room.homeId} devices={room.devices}></Card></p>)}

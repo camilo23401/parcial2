@@ -8,8 +8,9 @@ import { LOCALES } from "../i18n/locales";
 import messages from "../i18n/messages";
 
 export const AppRouter = () => {
-  const [language, setLanguage] = useState(LOCALES.ENGLISH);
+  const [language, setLanguage] = useState(LOCALES.SPANISH);
 
+  console.log(language);
   return (
     <IntlProvider locale={language} messages={messages[language]}>
       <Router>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import * as d3 from "d3";
+import { FormattedMessage } from "react-intl";
 
 export const PieChart = props => {
   const ref = useRef(null);
@@ -57,11 +58,14 @@ export const PieChart = props => {
   
 
   return (
+    <>
+    <p><FormattedMessage id="power"/></p>
     <svg width={props.width} height={props.height}>
       <g
         ref={ref}
         transform={`translate(${props.outerRadius} ${props.outerRadius})`}
       />
     </svg>
+    </>
   );
 };
